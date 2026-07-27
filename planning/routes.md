@@ -7,8 +7,11 @@ Returns one random starter: GET/questions/random
 Return one question: GET/questions/:id
 
 Returns available categories: GET/categories
+* the categories are: relationship, familiarity, tone, setting, tags
 
 Returns relationship: GET/relationships
+
+Returns familarity: GET/Familiarity
 
 Returns tone options: GET/tones
 
