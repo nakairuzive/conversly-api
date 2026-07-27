@@ -2,7 +2,7 @@
 
 A conversation starter needs: id, question, relationship, familiarity, setting, tone, tags
 
-Relationship Categories:
+### Relationship Categories:
 - Stranger
 - Friend
 - Best friend
@@ -13,13 +13,13 @@ Relationship Categories:
 - Partner
 - Client
 
-Familiatity
+### Familiarity
 - First meeting
 - Acquaintance
 - Familiar
 - Close
 
-Setting
+### Setting
 - Work
 - Coffee
 - Online
@@ -29,18 +29,18 @@ Setting
 - Network
 - Date
 
-Tone
+### Tone
 - Funny
 - Deep
 - Professional
 - Casual
 - Thoughtful
 
-Tags
+### Tags
 - Technology
 - Movies
 - Food
-- Traveo
+- Travel
 - Career
 - Music
 - Family
