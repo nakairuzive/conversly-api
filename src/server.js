@@ -27,15 +27,23 @@ const PORT = 3000;
 //     next();
 // })
 
-// app.get('/api/questions/:id', async (req,res) => {
-//     const {id} = req.params;
-//     const question = await Question.findById(id);
-//     res.json(question);
-//     next();
-// })
+// app.get('/api/questions', async (req,res) => {
+//     try{
+//         const {relationship} = req.query;
+//         let filterData = {};
+//         if(relationship){
+//             filterData.relationship = relationship;
+//         }
+//         const resultQuestion = await Question.find(filterData);
+//         res.json(resultQuestion);
+//     } catch (error) {
+//         res.status(500).json({message: error.message});
+//     };
+// });
+    
 
 app.use('/api/questions/', questionRouter);
 
-app.use('/api/questions/:id', questionRouter);
 
 app.listen(PORT, () => {console.log(`Server running on port ${PORT}`)})
+
