@@ -11,14 +11,13 @@ app.use(express.json());
 
 const PORT = 3000;
 
-/* mongoose.connect(process.env.MONGO_URI)
+ mongoose.connect("mongodb+srv://nakiiruzie_db_user:NjqroIjKmqtrRrJ6@cluster0.fngsbwv.mongodb.net/conversationStarterDB?retryWrites=true&w=majority")
     .then(() => console.log('Successfully connected to MongoDB, Yippi'))
     .catch((error) => console.log(error))
-*/
+
 
 app.get('/api/questions', async (req,res) => {
     try{
-        console.log(req.params)
         const questions = await Question.find();
         res.status(200).json(questions);
     } catch (error) {
