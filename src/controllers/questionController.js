@@ -2,11 +2,23 @@ import { Question } from "../models/Question.js";
 
 export async function getQuestions(req,res,next){
     try{
-        const {relationship}  = req.query;
+        const {relationship, familiarity, setting, tone}  = req.query;
         let filteredQuestions = {};
 
         if(relationship){
             filteredQuestions.relationship = relationship;
+        }
+
+        if(familiarity){
+            filteredQuestions.familiarity = familiarity;
+        }
+
+        if(setting){
+            filteredQuestions.setting = setting;
+        }
+
+        if(tone){
+            filteredQuestions.tone = tone;
         }
 
         const questions = await Question.find(filteredQuestions);
@@ -26,21 +38,3 @@ export async function getQuestionsById(req,res,next) {
     next();
 }
 
-// export async function getFilteredQuestions(req,res,next){
-//     try{
-//         const {relationship}  = req.query;
-//         let filteredQuestions = {};
-
-//         if(relationship){
-//             filteredQuestions.relationship = relationship;
-//         }
-
-//         const result = await Question.find(filteredQuestions);
-
-//         res.json(result);
-
-//     } catch (error){
-//         res.status(500).json({message: error.message})
-//     }
-//     next();
-// }
