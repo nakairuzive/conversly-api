@@ -16,32 +16,6 @@ const PORT = 3000;
     .then(() => console.log('Successfully connected to MongoDB, Yippi'))
     .catch((error) => console.log(error))
 
-
-// app.get('/api/questions', async (req,res,next) => {
-//     try{
-//         const questions = await Question.find();
-//         res.status(200).json(questions);
-//     } catch (error) {
-//         res.status(500).json({error: error.message});
-//     }
-//     next();
-// })
-
-// app.get('/api/questions', async (req,res) => {
-//     try{
-//         const {relationship} = req.query;
-//         let filterData = {};
-//         if(relationship){
-//             filterData.relationship = relationship;
-//         }
-//         const resultQuestion = await Question.find(filterData);
-//         res.json(resultQuestion);
-//     } catch (error) {
-//         res.status(500).json({message: error.message});
-//     };
-// });
-    
-
 app.use('/api/questions/', questionRouter);
 
 

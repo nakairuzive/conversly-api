@@ -6,5 +6,3 @@ export const questionRouter = express.Router();
 questionRouter.get('/', getQuestions);
 
 questionRouter.get('/:id', getQuestionsById);
-
-// questionRouter.get('/', getFilteredQuestions);

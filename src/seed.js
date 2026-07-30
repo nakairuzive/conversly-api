@@ -5,157 +5,1237 @@ import mongoose from 'mongoose';
 import {Question} from './models/Question.js'
 
 const seedQuestions = [
-  {
-    "question": "What's one hobby you've always wanted to try but haven't started yet?",
+    {
+        "question": "What's one hobby you've always wanted to try but haven't started yet?",
+        "relationship": "Stranger",
+        "familiarity": "First meeting",
+        "setting": "Coffee",
+        "tone": "Casual",
+        "tags": ["Hobbies", "Travel", "Lifestyle"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "If you could instantly master one skill for your career, what would it be?",
+        "relationship": "Coworker",
+        "familiarity": "Acquaintance",
+        "setting": "Work",
+        "tone": "Professional",
+        "tags": ["Career", "Technology", "Growth"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "What's a subject you've learned recently that completely changed your perspective?",
+        "relationship": "Classmate",
+        "familiarity": "Familiar",
+        "setting": "School",
+        "tone": "Thoughtful",
+        "tags": ["Books", "Learning", "Education"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "What's the funniest misunderstanding we've ever had together?",
+        "relationship": "Best friend",
+        "familiarity": "Close",
+        "setting": "Party",
+        "tone": "Funny",
+        "tags": ["Memories", "Humor", "Friendship"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "What's one lesson from your parents that has stayed with you the longest?",
+        "relationship": "Friend",
+        "familiarity": "Close",
+        "setting": "Coffee",
+        "tone": "Deep",
+        "tags": ["Family", "Values", "Life"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "What's the most memorable family tradition you hope never disappears?",
+        "relationship": "Parent",
+        "familiarity": "Close",
+        "setting": "Home",
+        "tone": "Thoughtful",
+        "tags": ["Family", "Traditions", "Memories"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "If we swapped lives for a week, what do you think would surprise you the most?",
+        "relationship": "Sibling",
+        "familiarity": "Close",
+        "setting": "Home",
+        "tone": "Funny",
+        "tags": ["Family", "Lifestyle", "Humor"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "What's something small I do that makes you feel appreciated?",
+        "relationship": "Partner",
+        "familiarity": "Close",
+        "setting": "Date",
+        "tone": "Deep",
+        "tags": ["Relationships", "Love", "Communication"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "What inspired you to start the business you're building today?",
+        "relationship": "Client",
+        "familiarity": "Familiar",
+        "setting": "Networking",
+        "tone": "Professional",
+        "tags": ["Career", "Business", "Entrepreneurship"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "What's a TV show or movie you wish you could watch again for the first time?",
+        "relationship": "Online friend",
+        "familiarity": "Acquaintance",
+        "setting": "Online",
+        "tone": "Casual",
+        "tags": ["Movies", "Entertainment", "Streaming"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "What's one experience that strengthened your faith the most?",
+        "relationship": "Church member",
+        "familiarity": "Familiar",
+        "setting": "Church",
+        "tone": "Thoughtful",
+        "tags": ["Faith", "Community", "Life"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "If money and time weren't an issue, where would you travel first and why?",
+        "relationship": "Travel companion",
+        "familiarity": "Acquaintance",
+        "setting": "Airport",
+        "tone": "Casual",
+        "tags": ["Travel", "Adventure", "Dreams"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "What's one achievement you're proud of that most people don't know about?",
+        "relationship": "Mentor",
+        "familiarity": "Familiar",
+        "setting": "Conference",
+        "tone": "Thoughtful",
+        "tags": ["Career", "Growth", "Achievements"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "What's the most ridiculous purchase you've ever convinced yourself was necessary?",
+        "relationship": "Neighbor",
+        "familiarity": "Acquaintance",
+        "setting": "Community event",
+        "tone": "Funny",
+        "tags": ["Lifestyle", "Shopping", "Humor"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+        "question": "When you look back ten years from now, what do you hope you'll be most grateful for?",
+        "relationship": "Friend",
+        "familiarity": "Familiar",
+        "setting": "Beach",
+        "tone": "Deep",
+        "tags": ["Life", "Goals", "Reflection"],
+        "createdAt": "2026-07-27T15:00:00Z",
+        "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the story behind your name?",
+    "relationship": "Stranger",
+    "familiarity": "First meeting",
+    "setting": "Party",
+    "tone": "Casual",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "If you could instantly master one skill, what would it be?",
+    "relationship": "Stranger",
+    "familiarity": "First meeting",
+    "setting": "Networking",
+    "tone": "Thoughtful",
+    "tags": ["Career", "Technology"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the last show you binge-watched?",
     "relationship": "Stranger",
     "familiarity": "First meeting",
     "setting": "Coffee",
     "tone": "Casual",
-    "tags": ["Hobbies", "Travel", "Lifestyle"],
+    "tags": ["Movies"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "If you could instantly master one skill for your career, what would it be?",
+    },
+    {
+    "question": "What made you choose your line of work?",
+    "relationship": "Stranger",
+    "familiarity": "First meeting",
+    "setting": "Work",
+    "tone": "Professional",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a food you tried recently that surprised you?",
+    "relationship": "Stranger",
+    "familiarity": "Acquaintance",
+    "setting": "Coffee",
+    "tone": "Funny",
+    "tags": ["Food"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "Where's the farthest you've ever traveled from home?",
+    "relationship": "Stranger",
+    "familiarity": "Acquaintance",
+    "setting": "Networking",
+    "tone": "Casual",
+    "tags": ["Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What kind of music did you grow up listening to?",
+    "relationship": "Classmate",
+    "familiarity": "First meeting",
+    "setting": "School",
+    "tone": "Casual",
+    "tags": ["Music", "Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's your go-to study spot on campus?",
+    "relationship": "Classmate",
+    "familiarity": "Acquaintance",
+    "setting": "School",
+    "tone": "Casual",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "Do you have any siblings, and where do you fall in the birth order?",
+    "relationship": "Classmate",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Thoughtful",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a class that completely changed how you think?",
+    "relationship": "Classmate",
+    "familiarity": "Familiar",
+    "setting": "School",
+    "tone": "Deep",
+    "tags": ["Books", "Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the most useless talent you're weirdly proud of?",
+    "relationship": "Classmate",
+    "familiarity": "Close",
+    "setting": "Party",
+    "tone": "Funny",
+    "tags": ["Music"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the best piece of career advice you've ever gotten?",
+    "relationship": "Coworker",
+    "familiarity": "First meeting",
+    "setting": "Work",
+    "tone": "Professional",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What project are you most looking forward to this quarter?",
     "relationship": "Coworker",
     "familiarity": "Acquaintance",
     "setting": "Work",
     "tone": "Professional",
-    "tags": ["Career", "Technology", "Growth"],
+    "tags": ["Career", "Technology"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "What's a subject you've learned recently that completely changed your perspective?",
-    "relationship": "Classmate",
+    },
+    {
+    "question": "What's your favorite lunch spot near the office?",
+    "relationship": "Coworker",
     "familiarity": "Familiar",
-    "setting": "School",
-    "tone": "Thoughtful",
-    "tags": ["Books", "Learning", "Education"],
+    "setting": "Work",
+    "tone": "Casual",
+    "tags": ["Food"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "What's the funniest misunderstanding we've ever had together?",
-    "relationship": "Best friend",
+    },
+    {
+    "question": "Honestly, what's the most chaotic meeting you've ever sat through?",
+    "relationship": "Coworker",
     "familiarity": "Close",
-    "setting": "Party",
+    "setting": "Coffee",
     "tone": "Funny",
-    "tags": ["Memories", "Humor", "Friendship"],
+    "tags": ["Career"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "What's one lesson from your parents that has stayed with you the longest?",
+    },
+    {
+    "question": "What's a goal you're working toward outside of work right now?",
+    "relationship": "Coworker",
+    "familiarity": "Close",
+    "setting": "Online",
+    "tone": "Thoughtful",
+    "tags": ["Career", "Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something you're really passionate about outside of work?",
+    "relationship": "Friend",
+    "familiarity": "Acquaintance",
+    "setting": "Coffee",
+    "tone": "Casual",
+    "tags": ["Music", "Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a book that changed the way you see the world?",
+    "relationship": "Friend",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Deep",
+    "tags": ["Books"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the trip you'd take tomorrow if money weren't an issue?",
+    "relationship": "Friend",
+    "familiarity": "Familiar",
+    "setting": "Party",
+    "tone": "Casual",
+    "tags": ["Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a fear you've managed to overcome?",
+    "relationship": "Friend",
+    "familiarity": "Close",
+    "setting": "Online",
+    "tone": "Deep",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the weirdest food combo you actually enjoy?",
     "relationship": "Friend",
     "familiarity": "Close",
     "setting": "Coffee",
-    "tone": "Deep",
-    "tags": ["Family", "Values", "Life"],
-    "createdAt": "2026-07-27T15:00:00Z",
-    "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "What's the most memorable family tradition you hope never disappears?",
-    "relationship": "Parent",
-    "familiarity": "Close",
-    "setting": "Home",
-    "tone": "Thoughtful",
-    "tags": ["Family", "Traditions", "Memories"],
-    "createdAt": "2026-07-27T15:00:00Z",
-    "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "If we swapped lives for a week, what do you think would surprise you the most?",
-    "relationship": "Sibling",
-    "familiarity": "Close",
-    "setting": "Home",
     "tone": "Funny",
-    "tags": ["Family", "Lifestyle", "Humor"],
+    "tags": ["Food"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "What's something small I do that makes you feel appreciated?",
+    },
+    {
+    "question": "What's your earliest memory of us becoming friends?",
+    "relationship": "Best friend",
+    "familiarity": "Close",
+    "setting": "Party",
+    "tone": "Thoughtful",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a dream you've never told anyone about?",
+    "relationship": "Best friend",
+    "familiarity": "Close",
+    "setting": "Online",
+    "tone": "Deep",
+    "tags": ["Career", "Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the dumbest inside joke we still laugh about?",
+    "relationship": "Best friend",
+    "familiarity": "Close",
+    "setting": "Coffee",
+    "tone": "Funny",
+    "tags": ["Music"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "If we started a business together tomorrow, what would it be?",
+    "relationship": "Best friend",
+    "familiarity": "Close",
+    "setting": "Networking",
+    "tone": "Casual",
+    "tags": ["Career", "Technology"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a moment you felt genuinely proud of me?",
+    "relationship": "Best friend",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Thoughtful",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something you wish I understood better about you?",
+    "relationship": "Partner",
+    "familiarity": "Familiar",
+    "setting": "Date",
+    "tone": "Deep",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's your idea of a perfect lazy Sunday?",
+    "relationship": "Partner",
+    "familiarity": "Close",
+    "setting": "Date",
+    "tone": "Casual",
+    "tags": ["Food", "Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a small thing I do that makes you feel loved?",
     "relationship": "Partner",
     "familiarity": "Close",
     "setting": "Date",
     "tone": "Deep",
-    "tags": ["Relationships", "Love", "Communication"],
+    "tags": ["Family"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "What inspired you to start the business you're building today?",
+    },
+    {
+    "question": "What's the most romantic thing anyone's ever done, in movies or real life?",
+    "relationship": "Partner",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Funny",
+    "tags": ["Movies"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "Where do you picture us five years from now?",
+    "relationship": "Partner",
+    "familiarity": "Close",
+    "setting": "Online",
+    "tone": "Deep",
+    "tags": ["Career", "Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a family tradition you hope we keep alive?",
+    "relationship": "Partner",
+    "familiarity": "Close",
+    "setting": "Church",
+    "tone": "Thoughtful",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something you never got to tell your parents that you wish you had?",
+    "relationship": "Parent",
+    "familiarity": "Close",
+    "setting": "Online",
+    "tone": "Deep",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's your favorite memory of us when I was little?",
+    "relationship": "Parent",
+    "familiarity": "Close",
+    "setting": "Coffee",
+    "tone": "Thoughtful",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something you were terrified of when you were my age?",
+    "relationship": "Parent",
+    "familiarity": "Familiar",
+    "setting": "Date",
+    "tone": "Casual",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the funniest thing I did as a kid that you still bring up?",
+    "relationship": "Parent",
+    "familiarity": "Close",
+    "setting": "Party",
+    "tone": "Funny",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What advice would you give your younger self?",
+    "relationship": "Parent",
+    "familiarity": "Close",
+    "setting": "Church",
+    "tone": "Deep",
+    "tags": ["Family", "Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "Who annoyed you more growing up, me or the neighbors' kids?",
+    "relationship": "Sibling",
+    "familiarity": "Close",
+    "setting": "Party",
+    "tone": "Funny",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a memory from our childhood you think about often?",
+    "relationship": "Sibling",
+    "familiarity": "Close",
+    "setting": "Coffee",
+    "tone": "Thoughtful",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "Do you think Mom and Dad had a favorite between us?",
+    "relationship": "Sibling",
+    "familiarity": "Close",
+    "setting": "Online",
+    "tone": "Funny",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a goal you're chasing right now that you haven't told many people about?",
+    "relationship": "Sibling",
+    "familiarity": "Familiar",
+    "setting": "Date",
+    "tone": "Deep",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's your take on the industry trends we've been seeing lately?",
+    "relationship": "Client",
+    "familiarity": "First meeting",
+    "setting": "Work",
+    "tone": "Professional",
+    "tags": ["Career", "Technology"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What made you decide to look for a new solution at this point?",
+    "relationship": "Client",
+    "familiarity": "First meeting",
+    "setting": "Networking",
+    "tone": "Professional",
+    "tags": ["Career", "Technology"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What does a successful outcome look like for you on this project?",
+    "relationship": "Client",
+    "familiarity": "Acquaintance",
+    "setting": "Work",
+    "tone": "Professional",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "How did you first get into this industry?",
+    "relationship": "Client",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Casual",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "Any exciting travel plans coming up, work or otherwise?",
     "relationship": "Client",
     "familiarity": "Familiar",
     "setting": "Networking",
-    "tone": "Professional",
-    "tags": ["Career", "Business", "Entrepreneurship"],
+    "tone": "Casual",
+    "tags": ["Travel"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "What's a TV show or movie you wish you could watch again for the first time?",
-    "relationship": "Online friend",
+    },
+    {
+    "question": "What's a song that instantly puts you in a good mood?",
+    "relationship": "Stranger",
+    "familiarity": "First meeting",
+    "setting": "Online",
+    "tone": "Funny",
+    "tags": ["Music"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What app do you feel like you can't live without?",
+    "relationship": "Stranger",
     "familiarity": "Acquaintance",
     "setting": "Online",
     "tone": "Casual",
-    "tags": ["Movies", "Entertainment", "Streaming"],
+    "tags": ["Technology"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "What's one experience that strengthened your faith the most?",
-    "relationship": "Church member",
+    },
+    {
+    "question": "What's the best meal you've had this year?",
+    "relationship": "Stranger",
+    "familiarity": "Acquaintance",
+    "setting": "Party",
+    "tone": "Casual",
+    "tags": ["Food"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "If you could relive one year of your life, which would it be and why?",
+    "relationship": "Stranger",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Deep",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a place you keep meaning to visit but haven't yet?",
+    "relationship": "Coworker",
+    "familiarity": "Acquaintance",
+    "setting": "Networking",
+    "tone": "Casual",
+    "tags": ["Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the one meeting habit you wish everyone would adopt?",
+    "relationship": "Coworker",
+    "familiarity": "Acquaintance",
+    "setting": "Work",
+    "tone": "Funny",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a skill from a past job that surprisingly still helps you today?",
+    "relationship": "Coworker",
+    "familiarity": "Familiar",
+    "setting": "Networking",
+    "tone": "Professional",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something outside of work you're genuinely excited about right now?",
+    "relationship": "Coworker",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Thoughtful",
+    "tags": ["Family", "Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What show or movie do you think everyone should watch at least once?",
+    "relationship": "Friend",
+    "familiarity": "Familiar",
+    "setting": "Party",
+    "tone": "Casual",
+    "tags": ["Movies"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something you believed as a kid that turned out to be completely wrong?",
+    "relationship": "Friend",
+    "familiarity": "Acquaintance",
+    "setting": "Party",
+    "tone": "Funny",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a habit you've picked up this year that's actually stuck?",
+    "relationship": "Friend",
+    "familiarity": "Familiar",
+    "setting": "Online",
+    "tone": "Thoughtful",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the last thing that made you laugh until it hurt?",
+    "relationship": "Friend",
+    "familiarity": "Close",
+    "setting": "Party",
+    "tone": "Funny",
+    "tags": ["Movies"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What does 'home' mean to you?",
+    "relationship": "Friend",
+    "familiarity": "Close",
+    "setting": "Coffee",
+    "tone": "Deep",
+    "tags": ["Family", "Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a piece of tech you can't imagine living without now?",
+    "relationship": "Classmate",
+    "familiarity": "Acquaintance",
+    "setting": "Online",
+    "tone": "Casual",
+    "tags": ["Technology"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's your ideal way to unwind after finals?",
+    "relationship": "Classmate",
+    "familiarity": "Familiar",
+    "setting": "Party",
+    "tone": "Casual",
+    "tags": ["Music", "Food"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "If you could sit in on any lecture, past or present, whose would it be?",
+    "relationship": "Classmate",
+    "familiarity": "Acquaintance",
+    "setting": "School",
+    "tone": "Thoughtful",
+    "tags": ["Books", "Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a group project horror story you still haven't fully recovered from?",
+    "relationship": "Classmate",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Funny",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a value your family passed down that you didn't appreciate until later?",
+    "relationship": "Classmate",
+    "familiarity": "Close",
+    "setting": "Church",
+    "tone": "Deep",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a cause or community project you'd love to see us tackle together?",
+    "relationship": "Coworker",
     "familiarity": "Familiar",
     "setting": "Church",
     "tone": "Thoughtful",
-    "tags": ["Faith", "Community", "Life"],
+    "tags": ["Family", "Career"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "If money and time weren't an issue, where would you travel first and why?",
-    "relationship": "Travel companion",
-    "familiarity": "Acquaintance",
-    "setting": "Airport",
+    },
+    {
+    "question": "What's your comfort food when you've had a long week?",
+    "relationship": "Coworker",
+    "familiarity": "Close",
+    "setting": "Coffee",
     "tone": "Casual",
-    "tags": ["Travel", "Adventure", "Dreams"],
+    "tags": ["Food"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "What's one achievement you're proud of that most people don't know about?",
-    "relationship": "Mentor",
-    "familiarity": "Familiar",
-    "setting": "Conference",
-    "tone": "Thoughtful",
-    "tags": ["Career", "Growth", "Achievements"],
+    },
+    {
+    "question": "What's one professional risk that ended up paying off for you?",
+    "relationship": "Coworker",
+    "familiarity": "Close",
+    "setting": "Networking",
+    "tone": "Professional",
+    "tags": ["Career"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "What's the most ridiculous purchase you've ever convinced yourself was necessary?",
-    "relationship": "Neighbor",
+    },
+    {
+    "question": "What's a podcast or newsletter you think more people should know about?",
+    "relationship": "Stranger",
     "familiarity": "Acquaintance",
-    "setting": "Community event",
-    "tone": "Funny",
-    "tags": ["Lifestyle", "Shopping", "Humor"],
+    "setting": "Coffee",
+    "tone": "Casual",
+    "tags": ["Technology", "Books"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  },
-  {
-    "question": "When you look back ten years from now, what do you hope you'll be most grateful for?",
+    },
+    {
+    "question": "What's a rule you live by that most people would find surprising?",
+    "relationship": "Stranger",
+    "familiarity": "Familiar",
+    "setting": "Networking",
+    "tone": "Thoughtful",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the most spontaneous thing you've ever done?",
+    "relationship": "Stranger",
+    "familiarity": "First meeting",
+    "setting": "Date",
+    "tone": "Funny",
+    "tags": ["Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What first caught your attention about this place, the food or the crowd?",
+    "relationship": "Stranger",
+    "familiarity": "First meeting",
+    "setting": "Party",
+    "tone": "Casual",
+    "tags": ["Food"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a lesson your faith has taught you that shapes how you treat others?",
+    "relationship": "Friend",
+    "familiarity": "Close",
+    "setting": "Church",
+    "tone": "Deep",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something you're grateful for that people rarely think to mention?",
     "relationship": "Friend",
     "familiarity": "Familiar",
-    "setting": "Beach",
-    "tone": "Deep",
-    "tags": ["Life", "Goals", "Reflection"],
+    "setting": "Church",
+    "tone": "Thoughtful",
+    "tags": ["Family"],
     "createdAt": "2026-07-27T15:00:00Z",
     "updatedAt": "2026-07-27T15:00:00Z"
-  }
-];
+    },
+    {
+    "question": "What's your favorite way to spend a first date?",
+    "relationship": "Stranger",
+    "familiarity": "First meeting",
+    "setting": "Date",
+    "tone": "Thoughtful",
+    "tags": ["Food", "Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a movie you could rewatch endlessly and never get tired of?",
+    "relationship": "Stranger",
+    "familiarity": "Acquaintance",
+    "setting": "Date",
+    "tone": "Casual",
+    "tags": ["Movies"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something on your bucket list you're determined to actually do?",
+    "relationship": "Partner",
+    "familiarity": "Familiar",
+    "setting": "Party",
+    "tone": "Casual",
+    "tags": ["Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a fear you have about the future that you don't talk about much?",
+    "relationship": "Partner",
+    "familiarity": "Familiar",
+    "setting": "Online",
+    "tone": "Deep",
+    "tags": ["Career", "Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a household chore you secretly don't mind doing?",
+    "relationship": "Partner",
+    "familiarity": "Close",
+    "setting": "Coffee",
+    "tone": "Funny",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What playlist would you make if you had to describe our relationship in songs?",
+    "relationship": "Partner",
+    "familiarity": "Close",
+    "setting": "Party",
+    "tone": "Funny",
+    "tags": ["Music"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something new you'd like us to try together this year?",
+    "relationship": "Partner",
+    "familiarity": "Familiar",
+    "setting": "Date",
+    "tone": "Casual",
+    "tags": ["Travel", "Food"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a decision you made that your younger self wouldn't have expected?",
+    "relationship": "Parent",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Thoughtful",
+    "tags": ["Career", "Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What was your very first job, and what did you learn from it?",
+    "relationship": "Parent",
+    "familiarity": "Familiar",
+    "setting": "Online",
+    "tone": "Casual",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a song that always reminds you of your own childhood?",
+    "relationship": "Parent",
+    "familiarity": "Acquaintance",
+    "setting": "Party",
+    "tone": "Casual",
+    "tags": ["Music", "Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What do you hope people remember about how you raised us?",
+    "relationship": "Parent",
+    "familiarity": "Close",
+    "setting": "Online",
+    "tone": "Deep",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a competitive game night memory that still makes you laugh?",
+    "relationship": "Sibling",
+    "familiarity": "Familiar",
+    "setting": "Party",
+    "tone": "Funny",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the best trip we ever took as a family, in your opinion?",
+    "relationship": "Sibling",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Casual",
+    "tags": ["Travel", "Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something about growing up in our house that shaped who you are now?",
+    "relationship": "Sibling",
+    "familiarity": "Close",
+    "setting": "Church",
+    "tone": "Deep",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a book you keep recommending to everyone lately?",
+    "relationship": "Sibling",
+    "familiarity": "Acquaintance",
+    "setting": "Online",
+    "tone": "Casual",
+    "tags": ["Books"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What are the top priorities you're weighing as you evaluate vendors?",
+    "relationship": "Client",
+    "familiarity": "Acquaintance",
+    "setting": "Online",
+    "tone": "Professional",
+    "tags": ["Career", "Technology"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's been the biggest challenge your team has faced this year?",
+    "relationship": "Client",
+    "familiarity": "Familiar",
+    "setting": "Work",
+    "tone": "Professional",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "Do you have a favorite restaurant near your office we should try next time?",
+    "relationship": "Client",
+    "familiarity": "Close",
+    "setting": "Coffee",
+    "tone": "Casual",
+    "tags": ["Food"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the most memorable conference or event you've attended?",
+    "relationship": "Client",
+    "familiarity": "Acquaintance",
+    "setting": "Networking",
+    "tone": "Casual",
+    "tags": ["Career", "Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a mistake early in your career that taught you the most?",
+    "relationship": "Client",
+    "familiarity": "Close",
+    "setting": "Work",
+    "tone": "Thoughtful",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a technology you think will completely change our lives in ten years?",
+    "relationship": "Stranger",
+    "familiarity": "Familiar",
+    "setting": "Networking",
+    "tone": "Thoughtful",
+    "tags": ["Technology"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the most underrated city you've ever visited?",
+    "relationship": "Coworker",
+    "familiarity": "Close",
+    "setting": "Coffee",
+    "tone": "Casual",
+    "tags": ["Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's your go-to karaoke song, no judgment?",
+    "relationship": "Friend",
+    "familiarity": "Close",
+    "setting": "Party",
+    "tone": "Funny",
+    "tags": ["Music"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's something you used to be embarrassed about that you now find funny?",
+    "relationship": "Best friend",
+    "familiarity": "Close",
+    "setting": "Party",
+    "tone": "Funny",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a compliment you received once that you still think about?",
+    "relationship": "Best friend",
+    "familiarity": "Familiar",
+    "setting": "Online",
+    "tone": "Thoughtful",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What app or gadget genuinely made your daily routine easier?",
+    "relationship": "Classmate",
+    "familiarity": "Familiar",
+    "setting": "Online",
+    "tone": "Casual",
+    "tags": ["Technology"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a course topic you wish they'd taught us earlier?",
+    "relationship": "Classmate",
+    "familiarity": "First meeting",
+    "setting": "School",
+    "tone": "Casual",
+    "tags": ["Books", "Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a small win from this week you haven't told anyone about yet?",
+    "relationship": "Friend",
+    "familiarity": "Acquaintance",
+    "setting": "Coffee",
+    "tone": "Thoughtful",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a family recipe you'd be devastated to lose?",
+    "relationship": "Parent",
+    "familiarity": "Close",
+    "setting": "Coffee",
+    "tone": "Thoughtful",
+    "tags": ["Food", "Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the last thing you learned that genuinely surprised you?",
+    "relationship": "Coworker",
+    "familiarity": "First meeting",
+    "setting": "Coffee",
+    "tone": "Casual",
+    "tags": ["Technology", "Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a hobby you'd pick back up if you had more free time?",
+    "relationship": "Client",
+    "familiarity": "Familiar",
+    "setting": "Coffee",
+    "tone": "Casual",
+    "tags": ["Music", "Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's one thing about your culture you wish more people understood?",
+    "relationship": "Stranger",
+    "familiarity": "Acquaintance",
+    "setting": "Party",
+    "tone": "Deep",
+    "tags": ["Family", "Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a childhood toy or game you still have a soft spot for?",
+    "relationship": "Sibling",
+    "familiarity": "Close",
+    "setting": "Party",
+    "tone": "Casual",
+    "tags": ["Family"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's a piece of wisdom from a mentor that stuck with you?",
+    "relationship": "Client",
+    "familiarity": "Close",
+    "setting": "Networking",
+    "tone": "Thoughtful",
+    "tags": ["Career"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    },
+    {
+    "question": "What's the most beautiful place you've ever seen with your own eyes?",
+    "relationship": "Stranger",
+    "familiarity": "Close",
+    "setting": "Coffee",
+    "tone": "Deep",
+    "tags": ["Travel"],
+    "createdAt": "2026-07-27T15:00:00Z",
+    "updatedAt": "2026-07-27T15:00:00Z"
+    }
+]
 
 const dbURI = "mongodb+srv://nakiiruzie_db_user:NjqroIjKmqtrRrJ6@cluster0.fngsbwv.mongodb.net/conversationStarterDB?retryWrites=true&w=majority";
 
