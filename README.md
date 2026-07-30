@@ -20,3 +20,9 @@ conversation-starter-app/
     ├── index.html          
     ├── style.css       
     └── script.js       
+
+
+1. Created src file
+2. Created a planning folder
+3. Installed all the files
+4. Created a server

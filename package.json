@@ -2,8 +2,8 @@
   "name": "conversly-api",
   "version": "1.0.0",
   "description": "conversation catalyst api",
-  "type":"module",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +14,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/nakairuzive/conversly-api/issues"
   },
@@ -22,6 +21,7 @@
   "dependencies": {
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "mongodb": "^7.5.0"
+    "mongodb": "^7.5.0",
+    "mongoose": "^9.9.0"
   }
 }
