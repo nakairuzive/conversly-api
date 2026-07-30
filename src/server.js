@@ -17,15 +17,25 @@ const PORT = 3000;
     .catch((error) => console.log(error))
 
 
-// app.get('/api/questions', async (req,res) => {
+// app.get('/api/questions', async (req,res,next) => {
 //     try{
 //         const questions = await Question.find();
 //         res.status(200).json(questions);
 //     } catch (error) {
 //         res.status(500).json({error: error.message});
 //     }
+//     next();
 // })
 
-app.use('/api/questions', questionRouter);
+// app.get('/api/questions/:id', async (req,res) => {
+//     const {id} = req.params;
+//     const question = await Question.findById(id);
+//     res.json(question);
+//     next();
+// })
+
+app.use('/api/questions/', questionRouter);
+
+app.use('/api/questions/:id', questionRouter);
 
 app.listen(PORT, () => {console.log(`Server running on port ${PORT}`)})
