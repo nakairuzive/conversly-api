@@ -1243,7 +1243,7 @@ const seedDB = async () => {
     try{
         await mongoose.connect(dbURI);
         await Question.deleteMany({});
-        await Question.insertMany(seedQuestions);
+        const result = await Question.insertMany(seedQuestions);
         console.log('Database successfully seeded with questions!');
     } catch (error) {
         console.log('Error while seeding database:',error)

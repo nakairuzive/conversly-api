@@ -43,3 +43,19 @@ export async function getQuestionsById(req,res,next) {
     next();
 }
 
+export async function getRandomQuestion(req,res,next){
+    try{
+        const idArray = await Question.distinct('_id');
+
+        const arrayLength = idArray.length;
+        let randomNumber = Math.floor(Math.random() * (arrayLength + 1));
+        
+        const question = await Question.findById(idArray[randomNumber]);
+        res.status(200).json(question);
+    } 
+    catch (error) {
+        res.status(500).json({message: error.message})
+    }
+    next();
+}
+

@@ -12,9 +12,10 @@ app.use(express.json());
 
 const PORT = 3000;
 
- mongoose.connect("mongodb+srv://nakiiruzie_db_user:NjqroIjKmqtrRrJ6@cluster0.fngsbwv.mongodb.net/conversationStarterDB?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://nakiiruzie_db_user:NjqroIjKmqtrRrJ6@cluster0.fngsbwv.mongodb.net/conversationStarterDB?retryWrites=true&w=majority")
     .then(() => console.log('Successfully connected to MongoDB, Yippi'))
     .catch((error) => console.log(error))
+
 
 app.use('/api/questions/', questionRouter);
 
