@@ -1,25 +1,42 @@
 # conversly-api
-conversation catalyst api
+
+Conversation catalyst api   
+The purpose of this api is to help people start meaningful conversations and build connections
+
+---
 
 ### File structure
-conversation-starter-app/   
-├── server.js              (entry point — starts Express, connects DB)      
+conversation-starter-app/        
 ├── .env                    (secrets — never committed)         
 ├── .gitignore          
-├── config/         
-│   └── db.js               (MongoDB connection logic)          
-├── models/         
-│   └── Starter.js          (schema definition, if using Mongoose)          
-├── routes/         
-│   └── starters.js         (route definitions)         
-├── controllers/            
-│   └── startersController.js  (the actual logic behind each route)         
-├── seed/           
-│   └── seedData.js         (script to populate initial DB data)        
-└── public/                 (your frontend)         
-    ├── index.html          
-    ├── style.css       
-    └── script.js       
+├── package.json
+├── package-lock.json    
+├── data.json               (stores array with documents for seeding into MongoDB)                            
+├── node_modules/                    
+├── planning/           
+│   └── api-design.md  
+│   └── data-model.md
+│   └── requirements.md
+│   └── routes.md
+└── src/                      
+    ├── config/         
+    │   └── database.js               (MongoDB connection logic)  
+    ├── controllers/            
+    │   └── questionController.js
+    ├── middleware/            
+    │   └── errorHandler.js
+    ├── models/                     
+    │   └── Questions.js 
+    ├── routes/         
+    │   └── questionRoutes.js          (route definitions)
+    ├── services/                       
+    │   └── questionService.js              
+    ├── app.js          
+    ├── seed.js                         (functions for inserting and deleting documents)                
+    └── server.js                   
+
+---
+### Project Timeline
 
 ### 📅28 - 29 July 2026
 > * Created src file 
@@ -40,13 +57,14 @@ conversation-starter-app/
 ---
 
 ### Challenges I experienced.
-1. Connecting to MongoDB, I had trouble getting the right connection string, the first string I got, was just a general string, so when I first seeded to the database using insertMany, it created a collection called test, which was not the collection I wanted to use. I had created a collection for this project. After I changed the connection string I was able to seed directly into the collection for conversation staters.
+1. Connecting to MongoDB, I had trouble getting the right connection string. The first string I got was just a general string, so when I first seeded to the database using insertMany, it created a collection called test, which was not the collection I wanted to use. I had created a collection for this project. After I changed the connection string, I was able to seed directly into the collection for conversation starters.
 
-2. I had trouble starting this project, it was more of a knowledge/understanding gap. I first learned about APIs, Node.js and Express.js from Scrimba which is a great learning platform. But because it is "dumbed down" in that you don't setup the environment, it'ss set up to always work. So it was a big learning experience when I had to now figure out why its not working in my environment.
+2. I had trouble starting this project; it was more of a knowledge/understanding gap. I first learned about APIs, Node.js and Express.js from Scrimba, which is a great learning platform. But because it is "dumbed down" in that you don't set up the environment, it's set up to always work. So it was a big learning experience when I had to now figure out why it's not working in my environment.
 
-3. It's was just a tricky learning experience but once I was my routes working it all felt so worth it and rewarding.
+3. It was just a tricky learning experience, but once I got my routes working, it all felt so worth it and rewarding.
 
-4. I found it very annoying when I continously had to "whitelist" my IP address on MongoDB.
+4. I found it very annoying when I continuously had to "whitelist" my IP address on MongoDB.
+
 
 
 #### Optional additional features:

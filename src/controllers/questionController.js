@@ -2,7 +2,7 @@ import { Question } from "../models/Question.js";
 
 export async function getQuestions(req,res,next){
     try{
-        const {relationship, familiarity, setting, tone}  = req.query;
+        const {relationship, familiarity, setting, tone, tags}  = req.query;
         let filteredQuestions = {};
 
         if(relationship){
@@ -19,6 +19,11 @@ export async function getQuestions(req,res,next){
 
         if(tone){
             filteredQuestions.tone = tone;
+        }
+
+        if(tags){
+            const tagsArray = Array.isArray(tags)?tags: [tags];
+            filteredQuestions.tags = {$in: tagsArray};
         }
 
         const questions = await Question.find(filteredQuestions);
