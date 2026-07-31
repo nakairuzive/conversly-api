@@ -53,6 +53,11 @@ conversation-starter-app/
 > * Created the first query parameter search, GET/api/questions?relationship=''
 > * All the query parameter search categories are working
 > * Very happy with progress made :)
+> * Made some logos for the final site :)
+
+### 📅31 July 2026
+> * Got a filter for the tags string working
+> * Made a route for getting random questions working
 
 ---
 
