@@ -1,10 +1,4 @@
-import dns from 'node:dns';
-dns.setServers(['1.1.1.1', '8.8.8.8']);
-
-import mongoose from 'mongoose';
-import {Question} from './models/Question.js'
-
-const seedQuestions = [
+[
     {
         "question": "What's one hobby you've always wanted to try but haven't started yet?",
         "relationship": "Stranger",
@@ -5774,21 +5768,3 @@ const seedQuestions = [
     "updatedAt": "2026-07-27T15:00:00Z"
   }
 ]
-
-const dbURI = "mongodb+srv://nakiiruzie_db_user:NjqroIjKmqtrRrJ6@cluster0.fngsbwv.mongodb.net/conversationStarterDB?retryWrites=true&w=majority";
-
-const seedDB = async () => {
-    try{
-        await mongoose.connect(dbURI);
-        await Question.deleteMany({});
-        const result = await Question.insertMany(seedQuestions);
-        console.log('Database successfully seeded with questions!');
-    } catch (error) {
-        console.log('Error while seeding database:',error)
-    } finally {
-        mongoose.connection.close();
-        console.log('Database connection closed.')
-    }
-};
-
-seedDB();
