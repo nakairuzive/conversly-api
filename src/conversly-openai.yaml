@@ -1,0 +1,213 @@
+openapi: 3.0.3
+info:
+  title: Conversly API
+  version: 1.0.0
+  description: |
+    API for retrieving conversation starter questions.
+    Supports filtering by relationship, familiarity, setting, tone, and tags.
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/v1/questions:
+    get:
+      summary: Get all questions
+      description: Retrieve questions optionally filtered by query parameters.
+      operationId: getQuestions
+      parameters:
+        - name: relationship
+          in: query
+          description: Relationship context for the question.
+          schema:
+            type: string
+            example: friend
+        - name: familiarity
+          in: query
+          description: Familiarity level for the question.
+          schema:
+            type: string
+            example: casual
+        - name: setting
+          in: query
+          description: Conversation setting for the question.
+          schema:
+            type: string
+            example: work
+        - name: tone
+          in: query
+          description: Tone of the question.
+          schema:
+            type: string
+            example: humorous
+        - name: tags
+          in: query
+          description: One or more tags to filter questions. Can be provided as repeated query parameters.
+          schema:
+            type: array
+            items:
+              type: string
+            example:
+              - icebreaker
+              - fun
+          style: form
+          explode: true
+      responses:
+        '200':
+          description: List of matching questions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Question'
+              examples:
+                example:
+                  value:
+                    - _id: "64a1f2e3b5d6c7a8f9e0d1c2"
+                      question: "What was the best part of your day?"
+                      relationship: "friend"
+                      familiarity: "casual"
+                      setting: "coffee shop"
+                      tone: "friendly"
+                      tags:
+                        - "icebreaker"
+                        - "daily"
+                    - _id: "64a1f2e3b5d6c7a8f9e0d1c3"
+                      question: "If you could travel anywhere tomorrow, where would you go?"
+                      relationship: "friend"
+                      familiarity: "casual"
+                      setting: "weekend"
+                      tone: "thoughtful"
+                      tags:
+                        - "travel"
+                        - "dream"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: "Internal server error"
+  /api/v1/questions/random:
+    get:
+      summary: Get a random question
+      description: Retrieve a single random question from the database.
+      operationId: getRandomQuestion
+      responses:
+        '200':
+          description: Random question returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Question'
+              examples:
+                example:
+                  value:
+                    _id: "64a1f2e3b5d6c7a8f9e0d1c4"
+                    question: "What is one thing you wish you knew before starting your current job?"
+                    relationship: "colleague"
+                    familiarity: "professional"
+                    setting: "office"
+                    tone: "reflective"
+                    tags:
+                      - "work"
+                      - "career"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: "Internal server error"
+  /api/v1/questions/{id}:
+    get:
+      summary: Get question by ID
+      description: Retrieve a single question by its MongoDB document ID.
+      operationId: getQuestionsById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: MongoDB ObjectId of the question.
+          schema:
+            type: string
+            example: "64a1f2e3b5d6c7a8f9e0d1c2"
+      responses:
+        '200':
+          description: Question found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Question'
+              example:
+                _id: "64a1f2e3b5d6c7a8f9e0d1c2"
+                question: "What was the best part of your day?"
+                relationship: "friend"
+                familiarity: "casual"
+                setting: "coffee shop"
+                tone: "friendly"
+                tags:
+                  - "icebreaker"
+                  - "daily"
+        '404':
+          description: Question not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: "Question not found"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                message: "Internal server error"
+components:
+  schemas:
+    Question:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: MongoDB document ObjectId
+          example: "64a1f2e3b5d6c7a8f9e0d1c2"
+        question:
+          type: string
+          description: The conversation starter prompt.
+          example: "What was the best part of your day?"
+        relationship:
+          type: string
+          description: Relationship context for the prompt.
+          example: "friend"
+        familiarity:
+          type: string
+          description: Familiarity level for the prompt.
+          example: "casual"
+        setting:
+          type: string
+          description: Setting context for the prompt.
+          example: "coffee shop"
+        tone:
+          type: string
+          description: Tone of the prompt.
+          example: "friendly"
+        tags:
+          type: array
+          description: Tags associated with the prompt.
+          items:
+            type: string
+          example:
+            - "icebreaker"
+            - "daily"
+      required:
+        - question
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Internal server error"

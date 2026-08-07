@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import {Question} from './models/Question.js'
 import { questionRouter } from './routes/questionRoutes.js';
+import cors from "cors";
 
 import dns from 'node:dns';
 dns.setServers(['1.1.1.1', '8.8.8.8']);
@@ -9,6 +10,8 @@ dns.setServers(['1.1.1.1', '8.8.8.8']);
 const app = express();
 
 app.use(express.json());
+
+app.use(cors());
 
 const PORT = 3000;
 
