@@ -59,6 +59,10 @@ conversation-starter-app/
 > * Got a filter for the tags string working
 > * Made a route for getting random questions working
 
+### 📅06 & 07 August 2026
+> * Database now has 1187 Questions
+> * Deployed using Render ... Realized that I am using GET/api/products, this needs to be fixed
+
 ---
 
 ### Challenges I experienced.

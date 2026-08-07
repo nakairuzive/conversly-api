@@ -27,7 +27,6 @@ export async function getQuestions(req,res,next){
         }
 
         const questions = await Question.find(filteredQuestions);
-        console.log(filteredQuestions.length)
         res.status(200).json(questions);
 
     } catch (error) {
@@ -48,7 +47,6 @@ export async function getRandomQuestion(req,res,next){
         const idArray = await Question.distinct('_id');
 
         const arrayLength = idArray.length;
-        console.log(arrayLength)
         let randomNumber = Math.floor(Math.random() * (arrayLength + 1));
         
         const question = await Question.findById(idArray[randomNumber]);
