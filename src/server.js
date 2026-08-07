@@ -17,7 +17,7 @@ mongoose.connect("mongodb+srv://nakiiruzie_db_user:NjqroIjKmqtrRrJ6@cluster0.fng
     .catch((error) => console.log(error))
 
 
-app.use('/questions', questionRouter);
+app.use('/api/v1/questions/', questionRouter);
 
 
 app.listen(PORT, () => {console.log(`Server running on port ${PORT}`)})
