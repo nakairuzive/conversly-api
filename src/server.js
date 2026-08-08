@@ -13,14 +13,14 @@ app.use(express.json());
 
 app.use(cors());
 
-const PORT = 3000;
+const PORT = 4000;
 
 mongoose.connect("mongodb+srv://nakiiruzie_db_user:NjqroIjKmqtrRrJ6@cluster0.fngsbwv.mongodb.net/conversationStarterDB?retryWrites=true&w=majority")
     .then(() => console.log('Successfully connected to MongoDB, Yippi'))
     .catch((error) => console.log(error))
 
 
-app.use('/api/v1/questions/', questionRouter);
+app.use('/api/v1/questions', questionRouter);
 
 
 app.listen(PORT, () => {console.log(`Server running on port ${PORT}`)})

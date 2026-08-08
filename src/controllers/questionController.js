@@ -58,3 +58,21 @@ export async function getRandomQuestion(req,res,next){
     next();
 }
 
+export async function getDistinctQuestion(req,res,next){
+    try{
+        const {fieldName} = req.params;
+
+        const allowedFields = ['relationship', 'familiarity', 'setting', 'tags', 'tone'];
+
+        if(!allowedFields.includes(fieldName)){
+            return res.status(400).json({message: 'Invalid field requested'})
+        }
+
+        const uniqueValues = await Question.distinct(fieldName);
+        const cleanList = uniqueValues.filter(val => val !== null && val !== '');
+        res.json(cleanList);
+    } catch (error){
+        res.status(500).json({message: 'Error retrieving field values', error: error.message})
+    }
+}
+

@@ -63,6 +63,8 @@ conversation-starter-app/
 > * Database now has 1187 Questions
 > * Deployed using Render ... Realized that I am using GET/api/products, this needs to be fixed
 
+### 📅08 August 2026
+> * Created a new route that returns all the distinct fields, GET/api/v1/questions/distinct/:fieldName
 ---
 
 ### Challenges I experienced.
